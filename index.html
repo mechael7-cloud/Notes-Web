@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="header">
+        <h2>Notes Web</h2>
+        <button class="button-add" onclick="addButton()" id="add-button">+ add</button>
+        <button class="button-toggle" onclick="toggleButton()">🌙</button>
+    </header>
+    <main>
+        <!-- <div class="kelas">
+            <h2>Add Notes</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, earum!</h3>
+            <button onclick="addButton()">+</button>
+        </div> -->
+    </main>
+    <div class="overlay"></div>
+    <div class="card" id="cards">
+        <h2>Add New Notes</h2>
+        <label for="inputJudul">Title</label>
+        <input type="text" id="inputJudul" placeholder="Add Title">
+        <label for="inputContent">Content</label>
+        <input type="text" id="inputContent" placeholder="Add Content">
+        <button class="cancel-button" onclick="removeNotes()" id="remove-note">Cancel</button>
+        <button class="save-button" onclick="saveNotes()">Save</button>
+    </div>
+    <script src="index.js" ></script>
+</body>
+
+</html>
