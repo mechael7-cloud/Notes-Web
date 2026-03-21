@@ -62,8 +62,6 @@ main .kelas button {
     color: white;
     margin: 15px 0px;
 }
-
-
 .card {
     opacity: 0;
 }
@@ -113,6 +111,7 @@ main .kelas button {
     font-weight: 700;
     color: white;
     box-shadow: 0px 0px 8px black;
+    cursor: pointer;
 }
 .cancel-button {
     background-color: red;
