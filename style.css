@@ -41,6 +41,14 @@ header .button-toggle {
     border: none;
     cursor: pointer;
 }
+main.lihat {
+    opacity: 0;
+    display: none;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
 main .kelas {
     margin: 30px;
     width: 200px;
@@ -61,6 +69,23 @@ main .kelas button {
     background-color: blue;
     color: white;
     margin: 15px 0px;
+}
+main .kelas-1 {
+    width: 200px;
+    height: 150px;
+    background-color: rgb(213, 213, 230);
+    margin: 10px;
+    border-radius: 10px;
+}
+main .kelas-2 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+main .kelas-2 h2 {
+    margin-right: 50px;
 }
 .card {
     opacity: 0;
