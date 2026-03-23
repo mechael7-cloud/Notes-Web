@@ -46,16 +46,21 @@ main.lihat {
     display: none;
 }
 main {
-    display: flex;
-    flex-wrap: wrap;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 150px;  
+    gap: 20px;
 }
 main .kelas {
-    margin: 30px;
+    margin: 50px;
+    height: 200px;
     width: 200px;
     padding: 20px;
     background-color: rgb(193, 221, 231);
     border-radius: 10px;
     text-align: center;
+    
 }
 main .kelas h2 { 
     margin: 10px 0px;
@@ -70,23 +75,28 @@ main .kelas button {
     color: white;
     margin: 15px 0px;
 }
-main .kelas-1 {
-    width: 200px;
-    height: 150px;
-    background-color: rgb(213, 213, 230);
-    margin: 10px;
-    border-radius: 10px;
+main .notes {
+    background-color: aliceblue;
+    padding: 10px;
 }
-main .kelas-2 {
-    width: 100%;
+.notes .notes-title {
     display: flex;
-    justify-content: flex-end;
-
+}
+.notes .notes-button {
+    margin-left: auto;
+}
+.notes-button button {
+    width: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+}
+.notes-button button:hover {
+    background-color: rgb(255, 255, 255);
 }
 
-main .kelas-2 h2 {
-    margin-right: 50px;
-}
 .card {
     opacity: 0;
 }
