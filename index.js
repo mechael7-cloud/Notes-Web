@@ -10,13 +10,14 @@ const inputJudul = document.getElementById("inputJudul");
 const inputContent = document.getElementById("inputContent");
 const buttonSave = document.getElementById("save-button");
 const noteContainer = document.getElementById("main-container");
-const noteClose = document.getElementById("notes-close")
+const noteClose = document.getElementsByClassName("notes-close")
 
 
 buttonSave.addEventListener("click", () => {
     cards.classList.remove("show");
     headerPage.classList.remove("tampil")
-})
+});
+
 
 buttonAdd.addEventListener("click", function () {
     cards.classList.toggle("show");
@@ -24,11 +25,17 @@ buttonAdd.addEventListener("click", function () {
     noteContainer.classList.toggle("lihat");
 });
 
+// buttonAdd2.addEventListener("click", function () {
+
+// });
+
 removeNote.addEventListener("click", () => {
 
     cards.classList.remove("show")
     headerPage.classList.remove("tampil")
-})
+    saveNote();
+});
+
 
 
 function closeOut() {
@@ -49,8 +56,8 @@ function keepNotes() {
         const keepNote = notes.findIndex(note => note.id == editNote)
         notes[keepNote] = {
             ...notes[keepNote],
-            keepJudul: keepJudul,
-            keepContent: keepContent,
+            Judul: keepJudul,
+            Content: keepContent,
         }
     } else {
         notes.unshift({
@@ -74,17 +81,16 @@ function writeNotes() {
             <div class="kelas">
             <h2>Add Notes</h2>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, earum!</h3>
-            <button onclick="addButton()">+</button>
+            <button class="note-add">+</button>
         </div>`
         return
     } else {
         noteContainer.innerHTML = notes.map(note => `
-        <div class="notes">    
+        <div class="notes" data-id="${note.id}">    
             <div class="notes-title">
                 <h2>${note.Judul}</h2>
                 <div class="notes-button">
-                        <button onclick=""><i class ="fas fa-pen"></i></button>
-                        <button onclick="" id="notes-close">X</button>
+                        <button class="notes-close">X</button>
                 </div>
             </div>
             <div class="notes-content">
@@ -113,4 +119,23 @@ document.addEventListener("DOMContentLoaded", () => {
     closeOut();
     writeNotes();
     saveNote();
+})
+
+noteContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("notes-close")) {
+
+        const noteId = e.target.closest(".notes")
+        const id = noteId.dataset.id;
+
+        notes = notes.filter(note => note.id != id);
+
+        saveNote();
+
+        writeNotes();
+    }
+    if (e.target.classList.contains("note-add")) {
+        cards.classList.toggle("show");
+        headerPage.classList.toggle("tampil");
+        noteContainer.classList.toggle("lihat");
+    }
 })

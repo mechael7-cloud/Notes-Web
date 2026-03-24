@@ -7,7 +7,6 @@
     font-weight: weight;
      font-style: normal;
 }
-
 header {
     display: flex;
     margin: 30px;
@@ -21,7 +20,7 @@ header h2 {
     font-size: 40px;
 }
 header .button-add {
-    margin-left: 900px;
+    margin-left: auto;
     padding: 1px;
     width: 100px;
     height: 50px;
@@ -46,9 +45,9 @@ main.lihat {
     display: none;
 }
 main {
-    margin: 20px;
+    margin: 20px 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, 300px);
     grid-auto-rows: 150px;  
     gap: 20px;
 }
@@ -60,7 +59,7 @@ main .kelas {
     background-color: rgb(193, 221, 231);
     border-radius: 10px;
     text-align: center;
-    
+    opacity: 0;
 }
 main .kelas h2 { 
     margin: 10px 0px;
@@ -129,6 +128,9 @@ main .notes {
     box-shadow: 0px 0px 5px black;
     overflow-y: auto;
 }
+.card .input-content {
+    height: 100px;
+}
 .card input:focus {
     border-color: blue;
     box-shadow: 0px 0px 2px blue;
@@ -138,8 +140,8 @@ main .notes {
     margin: 20px
 }
 .card button {
-    display: block;
-    width: 80%;
+    display: inline;
+    width: 20%;
     padding: 10px;
     border-radius: 8px;
     border: none;
@@ -150,10 +152,10 @@ main .notes {
 }
 .cancel-button {
     background-color: red;
-    margin: 30px 50px;
+    margin-left: 270px;
+
 }
 .save-button {
     background-color: blue;
-    margin: 20px 50px;
 }
 
